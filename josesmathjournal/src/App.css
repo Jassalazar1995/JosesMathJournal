@@ -1,0 +1,15 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+  color: white;
+  padding: 15px;
+  font-size: 2em;
+  position: relative; /* This ensures that z-index is respected */
+  z-index: 100; /* Higher z-index so that the nav is above the sidebar */
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+}
