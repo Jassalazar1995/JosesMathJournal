@@ -8,11 +8,11 @@ export default function FunctionalAnalysis() {
     useEffect(() => {
         const fetchChapters = async () => {
             const fetchedChapters = [
-                { title: 'Metric Spaces, Normed Spaces, Inner Product Spaces', content: 'Content for Metric Spaces...', image: './images/funanal/Drum_vibration_mode12.gif' },
-                { title: 'Topology of Metric Spaces', content: 'Content for Topology of Metric Spaces...', image: './images/funanal/Möbius_strip.jpg' },
-                { title: 'Measure and Integration', content: 'Content for Measure and Integration...', image: './images/funanal//MeasureTheory.png' },
-                { title: 'Fourier Analysis in Hilbert Space', content: 'Content for Fourier Analysis...', image: './images/funanal/Fourier.png' },
-                { title: 'An Introduction to Abstract Linear Operator Theory', content: 'Content for Linear Operator Theory...', image: './images/funanal/DeSKO.png' }
+                { title: 'Metric Spaces, Normed Spaces, Inner Product Spaces', content: 'Content for Metric Spaces...', image: './images/funanal/Drum_vibration_mode12.gif', path: './funanalChapters/spaces'},
+                { title: 'Topology of Metric Spaces', content: 'Content for Topology of Metric Spaces...', image: './images/funanal/Möbius_strip.jpg', path: './funanalChapters/metricSpaces' },
+                { title: 'Measure and Integration', content: 'Content for Measure and Integration...', image: './images/funanal//MeasureTheory.png', path: './funanalChapters/measureIntegration' },
+                { title: 'Fourier Analysis in Hilbert Space', content: 'Content for Fourier Analysis...', image: './images/funanal/Fourier.png', path: './funanalChapters/fourier' },
+                { title: 'An Introduction to Abstract Linear Operator Theory', content: 'Content for Linear Operator Theory...', image: './images/funanal/DeSKO.png', path: './funanalChapters/linearOpTheory' }
             ];
             setChapters(fetchedChapters);
         };
