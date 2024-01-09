@@ -15,7 +15,7 @@ const ChapterPage = () => {
       const channelId = chapterData.youtubeChannelId;
       if (channelId) {
         const apiKey = import.meta.env.VITE_YoutubeAPIKey; 
-        const url = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=${channelId}&maxResults=10&order=viewCount&key=${apiKey}`;
+        const url = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=${channelId}&maxResults=4&order=viewCount&key=${apiKey}`;
 
         try {
           const response = await axios.get(url);
