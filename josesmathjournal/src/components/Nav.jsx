@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import PomodoroClock from "./PomodoroClock";
 
 
 export default function Nav() {
@@ -13,6 +14,7 @@ export default function Nav() {
             <Link to='/DiffGeo'>
                 <div>Differential Geometry</div>
             </Link>
+            <PomodoroClock />
         </div>
     )
 }
