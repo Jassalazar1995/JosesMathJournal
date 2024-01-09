@@ -5,7 +5,7 @@
   color: white;
   padding: 15px;
   font-size: 2em;
-  position: relative; /* This ensures that z-index is respected */
+  position: relative; /* This ensures that z-index is observed */
   z-index: 100; /* Higher z-index so that the nav is above the sidebar */
 }
 
@@ -14,18 +14,125 @@
   text-decoration: none;
 }
 
-.sidebar {
-  width: 250px; /* Adjust as needed */
-  /* additional styling */
+.videoContainer {
+  height: 5%;
+  width: 5%;
 }
 
+.chapters-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* two columns */
+  gap: 20px; /* space between grid items */
+  margin: 20px 0;
+}
+
+.chapter {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center items vertically in each chapter */
+}
+
+.chapter-image {
+  width: 70%; /* make images fill the container */
+  height: 600px; /* fixed height for images */
+  object-fit: cover; /* maintain aspect ratio without distorting the image */
+  border-radius: 10px; /*rounded corners */
+}
+
+.pomodoro-clock {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.pomodoro-timer {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+.pomodoro-controls button {
+  margin: 5px;
+  padding: 5px 10px;
+  font-size: 0.8em;
+}
+
+.chapter-page {
+  display: flex;
+  height: 100vh;
+  margin-left: 10px;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: blue;
+  position: fixed;
+  top: 180px; /* Adjusted to account for actual nav height including padding */
+  left: 0;
+  bottom: 20px;
+  padding-left: 30px;
+  overflow-y: auto;
+  z-index: 10; /* Lower than nav but high enough to be above other content */
+  transition: width 0.3s; /* Smooth transition for the sidebar width */
+}
+
+/* Styling for the content inside the sidebar */
+.sidebar .sidebar-content {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  height: 80vh; /* 100% of the viewport height minus the height of the nav bar */
+}
+
+/* Styling for the toggle button */
+.toggle-button {
+  position: fixed; 
+  top: 180px; 
+  left: 10px; 
+  bottom: 10px;
+  width: 1px; 
+  height: 100vh; 
+  background-color: blue;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 0; 
+  transition: left 0.3s; /* Smooth transition for the button */
+  color: white;
+}
+
+/* When the sidebar is hidden, we now adjust the width of the sidebar itself */
 .sidebar.hidden {
-  width: 0;
+  width: 0; 
   overflow: hidden;
 }
 
+.sidebar.hidden .sidebar-content {
+  width: 0;
+  overflow: hidden;
+  display: none; /* Hide the sidebar content when sidebar is hidden */
+}
+
+.sidebar.hidden .toggle-button {
+  left: 0px; /* Adjust so only part of the button is visible */
+  bottom: 10px;
+  height: 100vh;
+  background-color: blue; 
+}
+
 .content {
+  transition: margin-left 0.3s; /* Smooth transition for the margin */
+  margin-left: 260px; /* Make room for the sidebar */
   flex-grow: 1;
   padding: 20px;
-  /* additional styling for centered and neat content */
+  
+}
+
+/* Adjust the margin when sidebar is hidden */
+.sidebar.hidden + .content {
+  margin-left: 0;
+  
+}
+
+.active {
+  color: red; 
+  
 }

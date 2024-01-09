@@ -25,7 +25,7 @@ export const updateTimer = (timeLeft) => {
     };
 };
 
-// Creating a reducer that handles these timer actions and maintains the state of the timer
+// Created a reducer that handles these timer actions and maintains the state of the timer
 const initialState = {
     isRunning: false,
     timeLeft: 25 * 60 // 25 minutes in seconds

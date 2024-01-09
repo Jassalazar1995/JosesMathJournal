@@ -1,21 +1,31 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-//Create a side bar that can be minimized (conditional rendering)
-const Sidebar = ({ subsections }) => {
-    const [isVisible, setIsVisible] = useState(true);
+import React, { useState } from 'react';
+import { NavLink } from "react-router-dom";
 
-    return (
-        <div className={`sidebar ${isVisible ? '' : 'hidden'}`}>
-            <button onClick={() => setIsVisible(!isVisible)}>
-                {isVisible ? 'Hide' : 'Show'} Sidebar
-            </button>
-            <ul>
-                {subsections.map((subsection, index) => (
-                    <li key={index}>
-                        <Link to={subsection.path}>{subsection.title}</Link>
-                    </li>
-                ))}
-            </ul>
-        </div>
-    );
+const Sidebar = ({ subsections }) => {
+  const [isVisible, setIsVisible] = useState(true);
+
+  return (
+    <div className={`sidebar ${isVisible ? '' : 'hidden'}`}>
+      <button className="toggle-button" onClick={() => setIsVisible(!isVisible)}>
+        {isVisible ? '<<' : '>>'}
+      </button>
+      <div className="sidebar-content">
+        <ul>
+          {subsections.map((subsection, index) => (
+            <li key={index}>
+              {/* NavLink here for each sidebar item, in future will link to different parts of the page */}
+              <NavLink 
+                to={subsection.path} 
+                activeClassName="active"
+              >
+                {subsection.title}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
 };
+
+export default Sidebar;
