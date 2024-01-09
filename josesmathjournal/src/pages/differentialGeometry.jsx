@@ -8,13 +8,13 @@ export default function DifferentialGeometry() {
     useEffect(() => {
         const fetchChapters = async () => {
             const fetchedChapters = [
-                { title: 'Multivariable Calculus', content: 'Content for Multivariable Calculus', image: './images/diffgeo/MultiCalc.jpg' },
-                { title: 'Forms', content: 'Content for Forms', image: './images/diffgeo/Forms.png' },
-                { title: 'Differential Forms', content: 'Content for Differential Forms', image: './images/diffgeo/DifferentialForms.jpg' },
-                { title: 'Differentiation of Differential Forms', content: 'Content for Differentiation of...', image: './images/diffgeo/DiffofDiffForms.png' },
-                { title: 'Stokes Theorem', content: 'Content for Stokes Theorem', image: './images/diffgeo/Stokes.png' },
-                { title: 'Manifolds', content: 'Content for Manifolds', image: './images/diffgeo/Manifolds.png' },
-                { title: 'Differential Geometry via Differential Forms', content: 'Content for Differential Geometry via Differential Forms', image: './images/diffgeo/DiffGeo.png' },
+                { title: 'Multivariable Calculus', content: 'Content for Multivariable Calculus', image: './images/diffgeo/MultiCalc.jpg', path: './diffGeoChapters/' },
+                { title: 'Forms', content: 'Content for Forms', image: './images/diffgeo/Forms.png', path: './diffGeoChapters/' },
+                { title: 'Differential Forms', content: 'Content for Differential Forms', image: './images/diffgeo/DifferentialForms.jpg', path: './diffGeoChapters/' },
+                { title: 'Differentiation of Differential Forms', content: 'Content for Differentiation of...', image: './images/diffgeo/DiffofDiffForms.png', path: './diffGeoChapters/' },
+                { title: 'Stokes Theorem', content: 'Content for Stokes Theorem', image: './images/diffgeo/Stokes.png', path: './diffGeoChapters/' },
+                { title: 'Manifolds', content: 'Content for Manifolds', image: './images/diffgeo/Manifolds.png', path: './diffGeoChapters/' },
+                { title: 'Differential Geometry via Differential Forms', content: 'Content for Differential Geometry via Differential Forms', image: './images/diffgeo/DiffGeo.png', path: './diffGeoChapters/' },
             ];
             setChapters(fetchedChapters);
         };
