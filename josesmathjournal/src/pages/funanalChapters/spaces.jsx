@@ -26,8 +26,16 @@ const apiKey = import.meta.env.VITE_YoutubeAPIKey; // Ensure this is securely ha
         return <YouTube videoId={videoId} loading = 'lazy'/>; // I don't really understand what lazy does except that it optimizes performance for pages with multiple videos
     };
 
-    return(
-        <>
-        </>
+    return (
+        <div className="chapter-page">
+            <Sidebar subsections={subsections} />
+            <div className="content">
+                            {/* Renders the list of VideoPlayer components created by feeding the created react component VideoPlayer the id */}
+            {videos.map((video, index) => (
+                <VideoPlayer key={index} videoId={video.id.videoId} />
+                
+            ))}
+            </div>
+        </div>
     );
-}
+};
