@@ -13,3 +13,19 @@
   color: white;
   text-decoration: none;
 }
+
+.sidebar {
+  width: 250px; /* Adjust as needed */
+  /* additional styling */
+}
+
+.sidebar.hidden {
+  width: 0;
+  overflow: hidden;
+}
+
+.content {
+  flex-grow: 1;
+  padding: 20px;
+  /* additional styling for centered and neat content */
+}
