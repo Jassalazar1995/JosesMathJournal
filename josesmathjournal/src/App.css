@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Helps manage layouts with padding */
+}
+
 .nav {
   display: flex;
   justify-content: space-between;
@@ -12,6 +18,11 @@
 .nav a {
   color: white;
   text-decoration: none;
+  padding: 10px 15px;
+  transition: background-color 0.3s ease;
+}
+.nav a:hover {
+  background-color: #555; /* Background change on hover */
 }
 
 .videoContainer {
@@ -26,6 +37,9 @@
   margin: 20px 0;
 }
 
+.chapter:hover {
+  transform: translateY(-5px);
+}
 .chapter {
   display: flex;
   flex-direction: column;
@@ -37,8 +51,14 @@
   height: 600px; /* fixed height for images */
   object-fit: cover; /* maintain aspect ratio without distorting the image */
   border-radius: 10px; /*rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
+.chapter h2 {
+  margin-top: 15px; /* Space between image and title */
+  font-size: 1.2em; /* Title font size */
+  color: #333; /* Title color */
+  text-align: center; /* Center align title */
+}
 .pomodoro-clock {
   text-align: center;
   margin-top: 20px;
