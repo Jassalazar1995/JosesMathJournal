@@ -29,13 +29,28 @@ const PomodoroClock = () => {
     }, [isRunning, timeLeft, dispatch]);
 
     return (
-        <div className="pomodoro-clock">
-            <div className="pomodoro-timer">Time Left: {formatTime(timeLeft)}</div>
-            <div className="pomodoro-controls">
-                {/* Buttons to control the Pomodoro timer */}
-                <button onClick={() => dispatch(startTimer())}>Start</button>
-                <button onClick={() => dispatch(stopTimer())}>Stop</button>
-                <button onClick={() => dispatch(resetTimer())}>Reset</button>
+        // Using Tailwind CSS for styling
+        <div className="flex flex-col items-center p-4 bg-gray-700 text-white rounded-lg">
+            <div className="text-lg font-semibold mb-2">Time Left: {formatTime(timeLeft)}</div>
+            <div className="flex gap-2">
+                <button 
+                    onClick={() => dispatch(startTimer())} 
+                    className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+                >
+                    Start
+                </button>
+                <button 
+                    onClick={() => dispatch(stopTimer())} 
+                    className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded"
+                >
+                    Stop
+                </button>
+                <button 
+                    onClick={() => dispatch(resetTimer())} 
+                    className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+                >
+                    Reset
+                </button>
             </div>
         </div>
     );

@@ -17,11 +17,11 @@ Navigate to the desired course from the homepage via the navigation bar and sele
 Use the Pomodoro clock in the navbar to time your study sessions. It is best to take a 5 minute break after 25 minutes for 4 sessions and then take an hour break.
 
 ## Built With 
-React - The web framework used
-Axios - Promise based HTTP client
-Redux - State management library
-react-youtube - React component for YouTube videos
-react-router-dom
+React - The web framework used 
+Axios - Promise based HTTP client 
+Redux - State management library 
+react-youtube - React component for YouTube videos 
+react-router-dom 
 
 ## API
 YouTube Data API v3

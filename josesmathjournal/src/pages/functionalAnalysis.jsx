@@ -22,17 +22,21 @@ export default function FunctionalAnalysis() {
     }, []);
 
     return (
-        <div>
-            <h1>Functional Analysis</h1>
-            <div className="chapters-container">
+        <div className="container mx-auto p-4">
+            <h1 className="text-3xl font-bold mb-6">Functional Analysis</h1>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {chapters.map((chapter, index) => (
-                    <div className="chapter" key={index}>
-                        {/* Update the `to` prop to match the route defined in App.jsx */}
-                        <Link to={`/chapters/${chapter.path}`}>
-                            <img src={chapter.image} alt={`Image for ${chapter.title}`} className="chapter-image" />
-                            <h2>{chapter.title}</h2>
-                        </Link>
-                    </div>
+                    <Link to={`/chapters/${chapter.path}`} key={index} className="block transform transition duration-500 hover:scale-105">
+                        <div className="max-w-sm rounded overflow-hidden shadow-lg">
+                            <img src={chapter.image} alt={`Image for ${chapter.title}`} className="w-full" />
+                            <div className="px-6 py-4">
+                                <div className="font-bold text-xl mb-2">{chapter.title}</div>
+                                <p className="text-gray-700 text-base">
+                                    {chapter.content}
+                                </p>
+                            </div>
+                        </div>
+                    </Link>
                 ))}
             </div>
         </div>
