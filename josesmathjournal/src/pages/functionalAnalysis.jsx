@@ -22,8 +22,8 @@ export default function FunctionalAnalysis() {
     }, []);
 
     return (
-        <div className="container mx-auto p-4">
-            <h1 className="text-3xl font-bold mb-6">Functional Analysis</h1>
+        <div className="container ml-auto mr-auto mt-40 p-4 ">
+            <h1 className="text-3xl font-bold mb-40">Functional Analysis</h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {chapters.map((chapter, index) => (
                     <Link to={`/chapters/${chapter.path}`} key={index} className="block transform transition duration-500 hover:scale-105">
