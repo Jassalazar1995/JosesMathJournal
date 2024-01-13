@@ -29,15 +29,28 @@ const ChapterPage = () => {
     fetchVideos();
   }, [chapterId, chapterData.youtubeChannelId]); 
 
-  // VideoPlayer component
+  // VideoPlayer component with Tailwind CSS for styling
   const VideoPlayer = ({ videoId }) => {
-    return <YouTube videoId={videoId} opts={{ playerVars: { 'autoplay': 0, 'controls': 1 } }} />;
+    const opts = {
+      height: '390',
+      width: '640',
+      playerVars: { 
+        autoplay: 0,
+        controls: 1
+      }
+    };
+
+    return (
+      <div className="my-4 mt-40 flex justify-center">
+        <YouTube videoId={videoId} opts={opts} className="shadow-lg rounded-lg" />
+      </div>
+    );
   };
 
   return (
-    <div className="chapter-page">
+    <div className="chapter-page flex flex-col">
       <Sidebar subsections={chapterData.subsections.map(title => ({ title, path: `#${title}` }))} />
-      <div className="content">
+      <div className="content mx-auto p-4">
         {videos.map((videoId, index) => (
           <VideoPlayer key={index} videoId={videoId} />
         ))}
