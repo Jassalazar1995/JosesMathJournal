@@ -26,7 +26,16 @@ const userSchema = new Schema({
     lastName: {
         type: String,
         required: true
-    }
+    },
+    profile: {
+        bio: String,
+        pronouns: String
+    },
+    score: {
+        points: { type: Number, default: 0 },
+        level: { type: Number, default: 1 }
+    },
+    achievements: [{ type: String }]
 })
 
 const User = mongoose.model('User', userSchema)
