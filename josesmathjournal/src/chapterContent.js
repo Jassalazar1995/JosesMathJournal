@@ -18,6 +18,7 @@ const chapterContents = {
         "A discussion on Dimensions",
       ],
       content: "Detailed content for Metric Spaces...",
+      subject: 'functAnalysis',
       youtubeChannelId: "UCw2L9e-QtC2E7-LHgC25QwA",
     },
   
@@ -37,6 +38,7 @@ const chapterContents = {
         
       ],
       content: "Deep dive into the Topology of Metric Spaces...",
+      subject: 'functAnalysis',
       youtubeChannelId: "UC_x5XG1OV2P6uZZ5FSM9Ttw",
     },
     measureIntegration: {
@@ -45,6 +47,7 @@ const chapterContents = {
       path: 'measureIntegration',
       subsections: ["measure test 1", "measure test 2", "measure test 3"],
       content: "Exploring the fundamentals of Measure and Integration...",
+      subject: 'functAnalysis',
       youtubeChannelId: "UC_x5XG1OV2P6uZZ5FSM9Ttw",
     },
     fourier: {
@@ -53,6 +56,7 @@ const chapterContents = {
       path: 'fourier',
       subsections: ["fourier test 1", "fourier test 2", "fourier test 3"],
       content: "Introduction to Fourier Analysis in the context of Hilbert Spaces...",
+      subject: 'functAnalysis',
       youtubeChannelId: "UCw2L9e-QtC2E7-LHgC25QwA",
     },
     linearOpTheory: {
@@ -61,6 +65,7 @@ const chapterContents = {
       path: 'linearOpTheory',
       subsections: ["linear op test 1", "linear op test 2", "linear op test 3"],
       content: "Abstract Linear Operator Theory and its applications...",
+      subject: 'functAnalysis',
       youtubeChannelId: "UCw2L9e-QtC2E7-LHgC25QwA",
     },
     MultiCalc: {
@@ -69,6 +74,7 @@ const chapterContents = {
       path: 'MultiCalc',
       subsections: ["MultiCalc test 1", "MultiCalc test 2", "MultiCalc Test 3"],
       content: "Content for Multivariable Calculus...",
+      subject: 'diffGeo',
       youtubeChannelId: "UCw2L9e-QtC2E7-LHgC25QwA",
     },
     forms: {
@@ -77,6 +83,7 @@ const chapterContents = {
       path: 'forms',
       subsections: ["forms test 1", "forms test 2", "forms Test 3"],
       content: "hello this is forms content",
+      subject: 'diffGeo',
       youtubeChannelId: "UCw2L9e-QtC2E7-LHgC25QwA",
     },
     diffForms: {
@@ -85,6 +92,7 @@ const chapterContents = {
       path: 'diffForms',
       subsections: ["diffForms test 1", "diffForms test 2", "diffForms Test 3"],
       content: "hello this is diffForms content",
+      subject: 'diffGeo',
       youtubeChannelId: "UCw2L9e-QtC2E7-LHgC25QwA",
     },
     diffOfDiffForms: {
@@ -97,6 +105,7 @@ const chapterContents = {
         "diffOfDiffForms Test 3",
       ],
       content: "hello this is diffOfDiffForms content",
+      subject: 'diffGeo',
       youtubeChannelId: "UCw2L9e-QtC2E7-LHgC25QwA",
     },
     stokes: {
@@ -105,6 +114,7 @@ const chapterContents = {
       path: 'stokes',
       subsections: ["stokes test 1", "stokes test 2", "stokes Test 3"],
       content: "hello this is stokes content",
+      subject: 'diffGeo',
       youtubeChannelId: "UCw2L9e-QtC2E7-LHgC25QwA",
     },
     manifolds: {
@@ -113,15 +123,20 @@ const chapterContents = {
       path: 'manifolds',
       subsections: ["manifolds test 1", "manifolds test 2", "manifolds Test 3"],
       content: "hello this is manifolds content",
+      subject: 'diffGeo',
       youtubeChannelId: "UCw2L9e-QtC2E7-LHgC25QwA",
     },
     diffGeoDiffForms: {
+      title: 'Differential Geometry via Differential Forms',
+      image: './images/diffgeo/DiffGeo.png',
+      path: 'diffGeoDiffForms',
       subsections: [
         "diffGeoDiffForms test 1",
         "diffGeoDiffForms test 2",
         "diffGeoDiffForms test 3",
       ],
       content: "hello this is diffGeoDiffForms content",
+      subject: 'diffGeo',
       youtubeChannelId: "UCw2L9e-QtC2E7-LHgC25QwA",
     },
   };
