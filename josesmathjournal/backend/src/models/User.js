@@ -28,8 +28,8 @@ const userSchema = new Schema({
         required: true
     },
     profile: {
-        bio: String,
-        pronouns: String
+        bio: {type: String, default: ""},
+        pronouns: {type: String, default: ""}
     },
     score: {
         points: { type: Number, default: 0 },
