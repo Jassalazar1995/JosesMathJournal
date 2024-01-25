@@ -3,7 +3,8 @@ const User = require( '../models/User' )
 viewProfile = async ( req,res ) => {
     console.log('get /api/user')
     try {
-        const foundUser = await user.findById(req.id)
+        const foundUser = await User.findById(req.id)
+        console.log(req)
         res.status( 200 ).json({
             username: foundUser.username,
             email: foundUser.email,
@@ -13,6 +14,7 @@ viewProfile = async ( req,res ) => {
 
     } catch ( error ) {
         res.status( 500 ).json({ error: 'Error fetching user' })
+        console.log( error.message )
     }
 }
 
@@ -21,7 +23,7 @@ updateProfile = async ( req, res ) => {
         // Ensure only the profile fields are updated
         const profileUpdates = req.body.profile
         const user = await User.findByIdAndUpdate(
-            req.user.userId,
+            req.id,
             { $set: { "profile": profileUpdates } },
             { new: true, runValidators: true}
         ).select(`-password`)
@@ -34,4 +36,9 @@ updateProfile = async ( req, res ) => {
     } catch ( error ) {
         res.status( 500 ).json({ error: error.message })
     }
+}
+
+module.exports = {
+    viewProfile,
+    updateProfile
 }
