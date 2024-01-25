@@ -28,7 +28,7 @@ async function register(req,res) {
 
     } catch ( error ) {
         console.log( error.message )
-        res.status( 400 ).json({ error: err.message })
+        res.status( 400 ).json({ error: error.message })
     }
     
 }
@@ -55,7 +55,7 @@ async function login( req, res ) {
 
     } catch (error) {
         console.log(error.message)
-        res.status(400).json({ error: err.message })
+        res.status(400).json({ error: error.message })
     }
 }
 
