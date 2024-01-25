@@ -46,7 +46,7 @@ const ChapterPage = () => {
       </div>
     );
   };
-
+// This is a misc comment to practice branches.
   return (
     <div className="chapter-page flex flex-col">
       <Sidebar subsections={chapterData.subsections.map(title => ({ title, path: `#${title}` }))} />
