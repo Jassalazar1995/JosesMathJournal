@@ -9,7 +9,7 @@ let emptyForm = {
 }
 
 function Login({ setUser }) {
-
+    
     const navigate = useNavigate()
 
     let [form, setForm] = useState(emptyForm)
@@ -24,7 +24,7 @@ function Login({ setUser }) {
 
             const response = await axios.post('/api/auth/login', form)
             const token = response.data.token
-
+            console.log('response')
             console.log(token)
 
             if (!token) {
@@ -34,19 +34,19 @@ function Login({ setUser }) {
 
             localStorage.setItem("token", token)
 
-            const userResponse = await axios.get('/api/users', { 
+            const userResponse = await axios.get('/api/users/profile', { 
                 headers: {
                     Authorization: token
                 }
             })
-
+            console.log(userResponse)
             setUser(userResponse.data)
     
             navigate('/profile')
 
         } catch(err) {
-            console.log(err.response.data.error)
-            alert(err.response.data.error)
+            console.log(err)
+
         }
     }
 

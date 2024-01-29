@@ -35,12 +35,14 @@ async function register(req,res) {
 
 async function login( req, res ) {
     try {
+        console.log('start login')
         // 1. Check if user exists
         const foundUser = await User.findOne({ username: req.body.username })
         if( !foundUser ){
             return res.status( 404 ).json({ error: 'No such user exists' })
         }
 
+        console.log(foundUser)
         // 2. Check if the password provided by user matches the one in the database
         const validPass = await bcrypt.compare(req.body.password, foundUser.password)
 
@@ -50,7 +52,7 @@ async function login( req, res ) {
 
         // 3. Generate a JWT token and return it to the user
         const token = generateToken(foundUser)
-
+        console.log(token)
         res.status( 200 ).json({ token })
 
     } catch (error) {

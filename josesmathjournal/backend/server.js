@@ -24,7 +24,7 @@ app.get('/api/test', (req,res) => {
 })  
 
 // Auth routes
-app.use('/auth', authRoutes)
+app.use('/api/auth',  authRoutes)
 
 
 
