@@ -14,10 +14,10 @@ export default function Nav() {
         <Link to='/DiffGeo' className="hover:text-gray-300">
           <div>Differential Geometry</div>
         </Link>
-        <Link to='/Register' className="hover:text-gray-300">
+        <Link to='/auth/Register' className="hover:text-gray-300">
           <div>Register</div>
         </Link>
-        <Link to='/Login' className="hover:text-gray-300">
+        <Link to='/auth/Login' className="hover:text-gray-300">
           <div>Login</div>
         </Link>
         <Link to='/Blog' className="hover:text-gray-300">

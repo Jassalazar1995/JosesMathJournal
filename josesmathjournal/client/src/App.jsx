@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { Routes, Route } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import './App.css';
 import Nav from './components/Nav';
 import Main from './pages/Main';
@@ -7,22 +8,22 @@ import DifferentialGeometry from './pages/differentialGeometry';
 import FunctionalAnalysis from './pages/functionalAnalysis';
 import ChapterPage from './pages/ChapterPage'; 
 
-function App() {
-  const [user, setUser] = useState({})
 
-  async function getUser(token){
-    try {
-      const response = await axios.get('/api/users', {
-        headers: {
-          Authorization: token
-        }
-      })
-      setUser(response.data)
-    } catch (error) {
-      console.log(error);
-      localStorage.removeItem("token")
+function App() {
+
+  useEffect(()=>{
+    
+    const test = async () => {
+      try {
+        const response = await axios.get('/api/test')
+        console.log(response)
+      } catch (error) {
+        console.log(error)
+      }
+
     }
-  }
+    test()
+  },[])
 
   return (
     <>
