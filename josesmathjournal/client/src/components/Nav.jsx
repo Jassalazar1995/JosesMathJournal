@@ -14,7 +14,7 @@ export default function Nav() {
         <Link to='/DiffGeo' className="hover:text-gray-300">
           <div>Differential Geometry</div>
         </Link>
-        <Link to='/Register' className="hover:text-gray-300">
+        <Link to='/register' className="hover:text-gray-300">
           <div>Register</div>
         </Link>
         <Link to='/Login' className="hover:text-gray-300">
