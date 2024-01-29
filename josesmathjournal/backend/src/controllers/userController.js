@@ -12,6 +12,7 @@ viewProfile = async ( req,res ) => {
             points: foundUser.score.points
         })
 
+        console.log('test')
     } catch ( error ) {
         res.status( 500 ).json({ error: 'Error fetching user' })
         console.log( error.message )
