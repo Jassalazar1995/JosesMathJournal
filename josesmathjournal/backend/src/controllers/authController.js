@@ -41,6 +41,7 @@ async function login( req, res ) {
         if( !foundUser ){
             return res.status( 404 ).json({ error: 'No such user exists' })
         }
+
         console.log(foundUser)
         // 2. Check if the password provided by user matches the one in the database
         const validPass = await bcrypt.compare(req.body.password, foundUser.password)
