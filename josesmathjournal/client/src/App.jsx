@@ -1,3 +1,4 @@
+import axios from 'axios'
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import Nav from './components/Nav';
@@ -7,6 +8,22 @@ import FunctionalAnalysis from './pages/functionalAnalysis';
 import ChapterPage from './pages/ChapterPage'; 
 
 function App() {
+  const [user, setUser] = useState({})
+
+  async function getUser(token){
+    try {
+      const response = await axios.get('/api/users', {
+        headers: {
+          Authorization: token
+        }
+      })
+      setUser(response.data)
+    } catch (error) {
+      console.log(error);
+      localStorage.removeItem("token")
+    }
+  }
+
   return (
     <>
       <Nav />

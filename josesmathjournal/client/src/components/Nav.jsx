@@ -14,6 +14,21 @@ export default function Nav() {
         <Link to='/DiffGeo' className="hover:text-gray-300">
           <div>Differential Geometry</div>
         </Link>
+        <Link to='/Register' className="hover:text-gray-300">
+          <div>Register</div>
+        </Link>
+        <Link to='/Login' className="hover:text-gray-300">
+          <div>Login</div>
+        </Link>
+        <Link to='/Blog' className="hover:text-gray-300">
+          <div>Blog</div>
+        </Link>
+        <Link to='/Profile' className="hover:text-gray-300">
+          <div>Profile</div>
+        </Link>
+        <Link to='/Donate' className="hover:text-gray-300">
+          <div>Donate</div>
+        </Link>
       </div>
       <PomodoroClock />
     </nav>
