@@ -52,8 +52,8 @@ function App() {
       <div className="pt-290" >{/* Added padding to the top to push content below the navbar */}
         <Routes>
           <Route path='/' element={<Main />} />
-          <Route path='/register' element = {<Register />}></Route>
-          <Route path='/login' element = {<Login />}></Route>
+          <Route path='/register' element = {<Register setUser = {setUser}/>}></Route>
+          <Route path='/login' element = {<Login setUser = {setUser} />}></Route>
           <Route path='/DiffGeo' element={<DifferentialGeometry />} />
           <Route path='/Functanal' element={<FunctionalAnalysis />} />
           <Route path='/chapters/:chapterId' element={<ChapterPage />} /> 
