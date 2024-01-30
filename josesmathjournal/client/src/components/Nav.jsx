@@ -20,7 +20,7 @@ export default function Nav() {
         <Link to='/Login' className="hover:text-gray-300">
           <div>Login</div>
         </Link>
-        <Link to='/Blog' className="hover:text-gray-300">
+        <Link to='/blog' className="hover:text-gray-300">
           <div>Blog</div>
         </Link>
         <Link to='/Profile' className="hover:text-gray-300">
