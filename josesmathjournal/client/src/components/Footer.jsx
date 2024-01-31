@@ -1,4 +1,4 @@
-// Footer.jsx
+import { Link } from "react-router-dom";
 const Footer = () => {
     return (
       <footer className="bg-gray-800 text-white text-center p-4 absolute bottom-0 w-full">
@@ -7,7 +7,10 @@ const Footer = () => {
           <p>
             Made with ❤️ by Jose Salazar
           </p>
-          {/* Add additional links or information here if needed */}
+          <p>Enjoy Content?</p>
+          <Link to='/Donate' className="hover:text-gray-300">
+            <div>Donate</div>
+          </Link>
         </div>
       </footer>
     );
