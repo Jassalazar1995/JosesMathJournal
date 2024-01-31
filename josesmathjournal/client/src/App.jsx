@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import './App.css';
 
 import Nav from './components/Nav';
+import Footer from './components/Footer';
 
 import Main from './pages/Main';
 import DifferentialGeometry from './pages/differentialGeometry';
@@ -63,6 +64,7 @@ function App() {
           <Route path='/Functanal' element={<FunctionalAnalysis />} />
           <Route path='/chapters/:chapterId' element={<ChapterPage />} /> 
         </Routes>
+      <Footer />
       </div>
     </>
   );
