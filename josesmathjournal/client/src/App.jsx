@@ -4,6 +4,8 @@ import { useState} from 'react';
 
 import './App.css';
 
+import ReactVideoPlayer from './ReactVideoPlayer';
+
 // Components
 import Nav from './components/Nav';
 import Footer from './components/Footer';
