@@ -51,7 +51,7 @@ function App() {
 
   return (
     <>
-      <Nav />
+      <Nav username ={user.username} setUser={setUser}/>
       <div className="pt-290" >{/* Added padding to the top to push content below the navbar */}
         <Routes>
           <Route path='/' element={<Main />} />
