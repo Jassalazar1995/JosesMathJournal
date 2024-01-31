@@ -73,7 +73,7 @@ const Blog = () => {
     };
 
     return (
-        <div className="flex flex-col justify-center items-center space-y-8">
+        <div style={{ marginTop: '180px' }} className="flex flex-col justify-center items-center space-y-8">
             <form onSubmit={handlePostSubmit} className="w-full max-w-xl p-4 space-y-4 bg-white shadow-md rounded-lg">
                 <input
                     type="text"
