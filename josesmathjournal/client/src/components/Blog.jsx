@@ -12,7 +12,7 @@ const Blog = () => {
         const fetchBlogPosts = async () => {
             const token = localStorage.getItem('token');
             try {
-                const response = await axios.get('/api/blogs', {
+                const response = await axios.get('https://josemathjournal.onrender.com/api/blogs', {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 setBlogs(response.data);
@@ -27,7 +27,7 @@ const Blog = () => {
         e.preventDefault();
         const token = localStorage.getItem('token');
         try {
-            const response = await axios.post('/api/blogs', newPost, {
+            const response = await axios.post('https://josemathjournal.onrender.com/api/blogs', newPost, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             setBlogs([...blogs, response.data]);
@@ -40,7 +40,7 @@ const Blog = () => {
     const handleLike = async (postId) => {
         const token = localStorage.getItem('token');
         try {
-            await axios.put(`/api/blogs/${postId}/like`, {}, {
+            await axios.put(`https://josemathjournal.onrender.com/api/blogs/${postId}/like`, {}, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             setBlogs(blogs.map(blog => {
@@ -58,7 +58,7 @@ const Blog = () => {
         e.preventDefault();
         const token = localStorage.getItem('token');
         try {
-            const response = await axios.post(`/api/blogs/${selectedPostId}/comments`, { content: newComment }, {
+            const response = await axios.post(`https://josemathjournal.onrender.com/api/blogs/${selectedPostId}/comments`, { content: newComment }, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             setBlogs(blogs.map(blog => {
