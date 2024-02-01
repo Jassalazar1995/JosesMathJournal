@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 require('dotenv').config()
 const mongoConfig = require('./src/utils/db')
+const cors = require('cors')
 
 // importing routes
 const authRoutes = require( './src/routes/authRoutes' );
@@ -11,9 +12,12 @@ const commentRoutes = require('./src/routes/commentRoutes')
 // const donationRoutes = require('./src/routes/donationRoutes');
 
 
+
 const { authorize } = require( './src/middleware/authMiddleware' )
 
-const PORT = 5000;
+const PORT = 8080;
+
+app.use(cors())
 
 app.use(express.json())
 
