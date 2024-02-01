@@ -17,7 +17,6 @@ const PomodoroClock = () => {
         if (isRunning && timeLeft > 0) {
             interval = setInterval(() => {
                 // Dispatching action to update the timer every second
-                console.log('running')
                 dispatch(updateTimer(timeLeft - 1));
             }, 1000);
         } else if (!isRunning) {
@@ -29,7 +28,7 @@ const PomodoroClock = () => {
         return () => clearInterval(interval);
     }, [isRunning, timeLeft, dispatch]);
 
-    console.log(timeLeft)
+
     return (
         // Using Tailwind CSS for styling
         <div className="flex flex-col items-center p-4 bg-gray-700 text-white rounded-lg">
@@ -66,3 +65,5 @@ function formatTime(seconds) {
 }
 
 export default PomodoroClock;
+
+

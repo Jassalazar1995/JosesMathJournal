@@ -44,7 +44,7 @@ function Register({ setUser }){
 
             setUser(userResponse.data)
             console.log(userResponse.data)
-            navigate('/')
+            navigate('/profile')
 
         } catch (error) {
             console.log(error.response.data.error)
