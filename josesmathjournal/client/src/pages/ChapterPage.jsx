@@ -4,6 +4,7 @@ import Sidebar from '../components/SideBar';
 import chapterContents from '../chapterContent';
 import axios from 'axios';
 import YouTube from 'react-youtube';
+import baseURL from '../Api';
 
 const ChapterPage = () => {
     const { chapterId } = useParams();
