@@ -23,7 +23,7 @@ function Login({ setUser }) {
         e.preventDefault()
         try {
 
-            const response = await axios.post(baseURL + '/api/auth/login', form)
+            const response = await axios.post('/api/auth/login', form)
             const token = response.data.token
             console.log('response')
             console.log(token)
@@ -35,7 +35,7 @@ function Login({ setUser }) {
 
             localStorage.setItem("token", token)
 
-            const userResponse = await axios.get(baseURL + '/api/users/profile', { 
+            const userResponse = await axios.get('/api/users/profile', { 
                 headers: {
                     Authorization: token
                 }
