@@ -15,7 +15,7 @@ const commentRoutes = require('./src/routes/commentRoutes')
 
 const { authorize } = require( './src/middleware/authMiddleware' )
 
-const PORT = 8080;
+const PORT = 5000;
 
 app.use(cors())
 

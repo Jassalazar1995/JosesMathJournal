@@ -12,7 +12,7 @@ const Profile = () => {
         const fetchProfileData = async () => {
             try {
                 const token = localStorage.getItem('token');
-                const response = await axios.get('https://josemathjournal.onrender.com/api/users/profile', {
+                const response = await axios.get('/api/users/profile', {
                     headers: {
                         Authorization: token
                     }

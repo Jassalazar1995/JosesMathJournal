@@ -26,7 +26,7 @@ function Register({ setUser }){
         e.preventDefault()
         try {
             
-            const response = await axios.post('https://josemathjournal.onrender.com/api/auth/register',form)
+            const response = await axios.post('/api/auth/register',form)
             const token = response.data.token
             
             console.log(token)
@@ -37,7 +37,7 @@ function Register({ setUser }){
 
             localStorage.setItem("token", token)
 
-            const userResponse = await axios.get('https://josemathjournal.onrender.com/api/users', {
+            const userResponse = await axios.get('/api/users', {
                 headers: {
                     Authorization: token
                 }
