@@ -17,6 +17,7 @@ import ChapterPage from './pages/ChapterPage';
 import Register from "./pages/Register"
 import Login from './pages/Login'
 import Profile from './pages/profile';
+import Donate from './pages/Donate';
 
 
 
@@ -27,11 +28,12 @@ function App() {
 
   return (
     <>
-      <Nav username ={user.username} setUser={setUser}/>
+      {/* <Nav username ={user.username} setUser={setUser}/> */}
       <div className="pt-290" >{/* Added padding to the top to push content below the navbar */}
         <Routes>
           <Route path='/' element={<Main />} />
           <Route path='/blog' element = {<Blog />}></Route>
+          <Route path='/Donate' element = {<Donate />}></Route>
           <Route path='/register' element = {<Register setUser = {setUser}/>}></Route>
           <Route path='/login' element = {<Login setUser = {setUser} />}></Route>
           <Route path='/profile' element = {<Profile username ={user.username} email={user.email} points = {user.points} level = {user.level}/>}></Route>
@@ -39,7 +41,7 @@ function App() {
           <Route path='/Functanal' element={<FunctionalAnalysis />} />
           <Route path='/chapters/:chapterId' element={<ChapterPage />} /> 
         </Routes>
-      <Footer />
+      {/* <Footer /> */}
       </div>
     </>
   );
