@@ -28,7 +28,7 @@ function App() {
 
   return (
     <>
-      {/* <Nav username ={user.username} setUser={setUser}/> */}
+      <Nav username ={user.username} setUser={setUser}/>
       <div className="pt-290" >{/* Added padding to the top to push content below the navbar */}
         <Routes>
           <Route path='/' element={<Main />} />
@@ -41,7 +41,7 @@ function App() {
           <Route path='/Functanal' element={<FunctionalAnalysis />} />
           <Route path='/chapters/:chapterId' element={<ChapterPage />} /> 
         </Routes>
-      {/* <Footer /> */}
+      <Footer />
       </div>
     </>
   );
