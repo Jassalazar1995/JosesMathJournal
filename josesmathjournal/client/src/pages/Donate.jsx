@@ -39,14 +39,16 @@ export default function Donate() {
       });
   }, []);
 
-  return (
-    <div className="flex justify-center items-center h-screen">
-      <h1>React Stripe and the Payment Element</h1>
-      {clientSecret && stripePromise && (
+return (
+  <div className="flex flex-col justify-center items-center min-h-screen p-6">
+    <h1 className="text-3xl font-bold mb-4">React Stripe and the Payment Element</h1>
+    {clientSecret && stripePromise && (
+      <div className="w-full max-w-md"> {/* This container will limit the width of your form */}
         <Elements stripe={stripePromise} options={{ clientSecret }}>
           <CheckoutForm />
         </Elements>
-      )}
-    </div>
-  );
+      </div>
+    )}
+  </div>
+);
 }

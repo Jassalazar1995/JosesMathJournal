@@ -26,19 +26,15 @@ export default function CheckoutForm() {
       confirmParams: {
         return_url: `${window.location.origin}/completion`,
       },
-      redirect: "if_required",
     });
-    console.log('line30')
+
 
     if (error) {
       setMessage(error.message);
-      console.log('line33')
     } else if(paymentIntent && paymentIntent.status === "succeeded") {
-      console.log('line35')
       setMessage(`Payment status: ${paymentIntent.status}`);
     } else {
       setMessage("Unexpected state")
-      console.log('line39')
     }
 
 
