@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import baseURL from '../Api';
+import Post from './Post';
 
 const Blog = () => {
     const [blogs, setBlogs] = useState([]);
@@ -123,6 +124,7 @@ const Blog = () => {
                     </div>
                 </div>
             ))}
+            <Post />
         </div>
     );    
 };
