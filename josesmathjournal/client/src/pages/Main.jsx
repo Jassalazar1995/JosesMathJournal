@@ -14,9 +14,9 @@ const subjects = [
   { name: 'Graph Theory', icon: '/images/mainPage/graphTheoryLogo.png' },
   { name: 'Combinatorics', icon: '/images/mainPage/combinatoricLogo.png' },
   { name: 'Functional Analysis', icon: '/images/mainPage/functionalAnalysisLogo.png' },
-  { name: 'Differential Geometry', icon: 'path-to-calculus-icon' },
-  { name: 'Topological Vector Spaces', icon: 'path-to-calculus-icon' },
-  { name: 'Geometry', icon: 'path-to-calculus-icon' },
+  { name: 'Differential Geometry', icon: '/images/mainPage/diffGeoLogo.png' },
+  { name: 'Topological Vector Spaces', icon: '/images/mainPage/topologicalVectorSpaceLogo.png' },
+  { name: 'Geometry', icon: '/images/mainPage/geometryLogo.png' },
   // ... other subjects
 ];
 
