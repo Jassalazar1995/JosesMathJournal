@@ -6,9 +6,9 @@ const Post = ({ post }) => {
 
   function handleClick() {}
   return (
-    <div className="mb-8 shadow-md">
-      <div className="border-slate-400 border-b-2">
-        <div className="bg-slate-200 p-4">
+    <div className="mb-4 shadow-sm rounded-lg overflow-hidden">
+    <div className="border-b-2 border-gray-200">
+      <div className="bg-gray-100 p-4">
           <div className="flex items-center">
             <img
               src=""

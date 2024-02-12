@@ -48,8 +48,9 @@ app.post("/create-payment-intent", async (req, res) => {
 // importing routes
 const authRoutes = require("./src/routes/authRoutes");
 const userRoutes = require("./src/routes/userRoutes");
-const blogRoutes = require("./src/routes/blogRoutes");
-const commentRoutes = require("./src/routes/commentRoutes");
+const blogRoutes = require("./src/routes/postRoutes");
+const postRoutes = require('./src/routes/postRoutes')
+const commentRoutes = require('./src/routes/commentRoutes')
 // const donationRoutes = require('./src/routes/donationRoutes');
 
 const { authorize } = require("./src/middleware/authMiddleware");
@@ -71,11 +72,13 @@ app.use("/api/users", authorize, userRoutes);
 // Blog routes
 app.use("/api/blogs", authorize, blogRoutes);
 
-// Comment routes
-app.use("/api/", authorize, commentRoutes);
+
 
 // Donate routes
 // app.use('/api', donationRoutes);
+
+app.use('/api/posts', postRoutes)
+app.use('/comments', commentRoutes)
 
 app.listen(PORT, () => {
   console.log(`Listening on port: ${PORT}`);

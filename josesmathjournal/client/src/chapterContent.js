@@ -70,7 +70,7 @@ const chapterContents = {
     },
     MultiCalc: {
       title: 'Multivariable Calculus',
-      image: './images/diffgeo/MultiCalc.jpg',
+      image: './images/diffgeo/MultiCalc.png',
       path: 'MultiCalc',
       subsections: ["MultiCalc test 1", "MultiCalc test 2", "MultiCalc Test 3"],
       content: "Content for Multivariable Calculus...",

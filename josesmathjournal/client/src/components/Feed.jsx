@@ -28,18 +28,19 @@ const Feed = ({username}) => {
       }, [])
     
   return (
-    <div>
-        <Container className="pt-28 flex justify-center items-center">
-            <div className="flex flex-col shadow-md w-9/12">
-                <div className="">
-                    <p className="p-4 text-4xl">Feed</p>
-                </div>
-                <NewPost username={username} setPost={setPost} post={post}/>
-                <FeedList post={post}/>
-            </div>
-        </Container>
-    </div>
-  )
+  <div>
+    <Container className="mt-10"></Container>
+    <Container className="pt-5 flex justify-center items-center mt-11">
+      <div className="flex flex-col shadow-lg w-9/12 bg-white rounded-lg mt-11">
+        <div className="p-5 text-4xl font-bold text-gray-800 border-b border-gray-200">
+          Feed
+        </div>
+        <NewPost username={username} setPost={setPost} post={post} />
+        <FeedList post={post} />
+      </div>
+    </Container>
+  </div>
+);
 }
 
 export default Feed
