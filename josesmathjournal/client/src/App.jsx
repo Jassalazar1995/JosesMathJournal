@@ -18,7 +18,7 @@ import Register from "./pages/Register"
 import Login from './pages/Login'
 import Profile from './pages/profile';
 import Donate from './pages/Donate';
-
+import Feed from './components/Feed';
 
 
 
@@ -33,6 +33,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Main />} />
           <Route path='/blog' element = {<Blog />}></Route>
+          <Route path='/superblog' element = {<Feed username ={user.username} />}></Route>
           <Route path='/Donate' element = {<Donate />}></Route>
           <Route path='/register' element = {<Register setUser = {setUser}/>}></Route>
           <Route path='/login' element = {<Login setUser = {setUser} />}></Route>
