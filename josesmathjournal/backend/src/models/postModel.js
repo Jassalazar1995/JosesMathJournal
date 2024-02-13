@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const postSchema = new Schema({
-   likes: { type: Number },
+   likes: { type: Number, default: 0 },
    body: { type: String },
    user: { type: String, default: 'Bob' },
    // comments field here

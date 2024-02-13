@@ -27,4 +27,7 @@ router.get('/:id/edit', postControl.edit)
 // show
 router.get('/:id', postControl.show)
 
+// like
+router.post('/:id/like', postControl.likePost);
+
 module.exports = router

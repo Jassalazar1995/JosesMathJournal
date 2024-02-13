@@ -43,3 +43,19 @@ module.exports.show = async (req, res) => {
     console.log(post)
     res.render('posts/Show', { post })
 }
+
+module.exports.likePost = async (req,res) => {    
+    try{
+        const postId = req.params.id;
+        const updatePost = await Posts.findByIdAndUpdate(
+        postId,
+        { $inc: { likes: 1 } },
+        // Return the updated document
+        { new: true }
+        );
+        res.status(200).json(updatePost)
+    }catch(err){
+        res.send(err.message)
+        res.status(400).send(err.message)
+    }
+}

@@ -36,12 +36,12 @@ const NewPost = ({username, setPost, post}) => {
             <form onSubmit={handleSubmit}>
             <div className="bg-green-200 p-4 rounded-lg">
                 <div className="flex items-center">
-                    <img src="" alt="" className="w-10 bg-white h-10 ml-4 rounded-full"/>
+                    <img src="./images/stock/profilepic.jpg" alt="" className="w-10 bg-white h-10 ml-4 rounded-full"/>
                     <p className="pl-4">{username}</p>
                 </div>
             </div>
             <div className="h-36 w-full p-8" >
-                <input className="border-b-2 h-16 w-full placeholder:italic" placeholder="Post your favorite historical figure" name="body" onChange={handleChange}/>
+                <input className="border-b-2 h-16 w-full placeholder:italic" placeholder="  Post your favorite historical figure" name="body" onChange={handleChange}/>
                 <Icon className="mt-4 text-xl hover:cursor-pointer" icon="material-symbols:android-camera" onClick={handlePicture}/>
             </div>
             <div className="bg-green-200 p-4 rounded-lg">

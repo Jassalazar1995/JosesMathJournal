@@ -88,7 +88,7 @@ const chapterContents = {
     },
     diffForms: {
       title: 'Differential Forms',
-      image: './images/diffgeo/DifferentialForms.jpg',
+      image: './images/diffgeo/DifferentialForms.png',
       path: 'diffForms',
       subsections: ["diffForms test 1", "diffForms test 2", "diffForms Test 3"],
       content: "hello this is diffForms content",
