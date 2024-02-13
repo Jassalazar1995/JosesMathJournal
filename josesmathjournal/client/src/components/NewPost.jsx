@@ -45,7 +45,7 @@ const NewPost = ({username, setPost, post}) => {
                 <Icon className="mt-4 text-xl hover:cursor-pointer" icon="material-symbols:android-camera" onClick={handlePicture}/>
             </div>
             <div className="bg-green-200 p-4 rounded-lg">
-                <button className="self-end mt-2 bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700">Post</button>
+                <button className="self-end mt-2 bg-purple-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700">Post</button>
             </div>
             </form>
         </div>

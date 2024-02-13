@@ -2,13 +2,36 @@
 import { Icon } from "@iconify/react";
 import { useState } from "react";
 import axios from "axios";
-
+import { useRef } from "react";
 
 const Post = ({ post }) => {
   // Start the like state that will grab likes from the database
   const [like, setLike] = useState(post.likes); 
 
-  function handleSubmit() {}
+  const commentInputRef = useRef(null); // Ref for the comment input element
+
+  async function handleSubmit(e) {
+    if (e.key === "Enter" && !e.shiftKey) { // Check if Enter was pressed without the Shift key
+      e.preventDefault(); // Prevent default action to avoid form submission or newline
+      const commentText = commentInputRef.current.value; // Get the current value of the comment input
+
+      if (commentText.trim()) { // Check if the comment is not just whitespace
+        try {
+          // Replace 'Alice' with the actual user or obtain it from context/auth
+          const payload = { text: commentText, user: "Alice" };
+          const response = await axios.post(`/api/comments/${post._id}/comments`, payload);
+
+          // Clear the input field on successful comment submission
+          commentInputRef.current.value = "";
+
+          console.log("Comment added:", response.data);
+          // Optionally refresh comments list here
+        } catch (error) {
+          console.error("Error adding comment:", error);
+        }
+      }
+    }
+  }
 
   function handleClick(){    
     try {
@@ -61,13 +84,11 @@ const Post = ({ post }) => {
       <div className="bg-slate-200">
         <div className="flex items-center p-4">
           <img src="./images/stock/profilepic.jpg" alt="" className="w-10 bg-white h-10 rounded-full" />
-          {/* I will want to put user.profile.pic here */}
           <input
+            ref={commentInputRef} // Attach the ref to the input element
             className="bg-slate-200 border-b-[1px] border-black w-full ml-4"
             placeholder="Comment..."
-            onKeyDown={(e) => {
-              e.key === "Enter" && handleSubmit();
-            }}
+            onKeyDown={handleSubmit} // Use the handleSubmit function for onKeyDown
           />
         </div>
         <div className="flex">
