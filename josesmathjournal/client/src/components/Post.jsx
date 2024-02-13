@@ -16,6 +16,7 @@ const Post = ({ post }) => {
       setLike(like + 1)
       console.log(post._id)
       const response = axios.post(`/api/posts/${post._id}/like`)
+      console.log(post)
   } catch (error) {
       console.log(error)
   }
@@ -74,14 +75,15 @@ const Post = ({ post }) => {
             post.comments.map((comment, index) => (
               <div className="w-full flex items-center" key={index}>
                 <img
-                  src=""
+                  src="./images/stock/profilepic.jpg"
                   alt=""
                   className="w-10 bg-white h-10 ml-4 rounded-full"
                 />
                 <div className="flex flex-col m-4 bg-white w-full rounded-sm">
                   <div className="p-2">
                     <p className="text-purple-600">{comment.name}</p>
-                    <p className="py-1">{comment.body}</p>
+                    <p className="py-1">{post.comments[0]}</p>
+                    {/* I think I have to map all of the comments from the comments array. */}
                     <p className="text-sm text-gray-300">{comment.timestamp}</p>
                   </div>
                 </div>
