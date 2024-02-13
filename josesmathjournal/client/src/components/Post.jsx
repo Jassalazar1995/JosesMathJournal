@@ -82,7 +82,8 @@ const Post = ({ post }) => {
                 <div className="flex flex-col m-4 bg-white w-full rounded-sm">
                   <div className="p-2">
                     <p className="text-purple-600">{comment.name}</p>
-                    <p className="py-1">{post.comments[0]}</p>
+                    <p className="py-1">{comment.text}</p>
+                    {/* The Id that is being rendered is the id of the comments. I will need to use this id to grab the comment from the database */}
                     {/* I think I have to map all of the comments from the comments array. */}
                     <p className="text-sm text-gray-300">{comment.timestamp}</p>
                   </div>

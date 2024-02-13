@@ -78,7 +78,7 @@ app.use("/api/blogs", authorize, blogRoutes);
 // app.use('/api', donationRoutes);
 
 app.use('/api/posts', postRoutes)
-app.use('/api/posts', commentRoutes)
+app.use('/api/comments', commentRoutes)
 
 app.listen(PORT, () => {
   console.log(`Listening on port: ${PORT}`);

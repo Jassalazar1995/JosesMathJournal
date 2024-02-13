@@ -3,9 +3,15 @@ const Comment = require('../models/commentModel')
 
 
 module.exports.index = async (req, res) => {
-    const posts = await Posts.find().sort({ createdAt: -1 })
-    res.status(200).json(posts)
-}
+    try {
+        // Now populating comments for each post in the list
+        const posts = await Posts.find().sort({ createdAt: -1 }).populate('comments');
+        res.status(200).json(posts);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ message: err.message });
+    }
+};
 
 module.exports.new = async (req, res) => {
     res.render('posts/New')
