@@ -16,6 +16,9 @@ router.put('/:postId/:commentId', commentControl.update)
 // create
 router.post('/:postId', commentControl.create)
 
+
+router.post('/:postId/comments', commentControl.create);
+
 // edit 
 router.get('/:postId/:commentId', commentControl.edit)
 
