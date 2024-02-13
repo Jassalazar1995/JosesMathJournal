@@ -3,29 +3,29 @@ import { Icon } from "@iconify/react";
 import { useState } from "react";
 import axios from "axios";
 import { useRef } from "react";
+import { useEffect } from "react";
 
+// This component displays a single post and its comments
 const Post = ({ post }) => {
-  // Start the like state that will grab likes from the database
-  const [like, setLike] = useState(post.likes); 
-
+  const [like, setLike] = useState(post.likes);
+  const [comments, setComments] = useState(post.comments || []);  // Initialize comments state
   const commentInputRef = useRef(null); // Ref for the comment input element
 
+
   async function handleSubmit(e) {
-    if (e.key === "Enter" && !e.shiftKey) { // Check if Enter was pressed without the Shift key
-      e.preventDefault(); // Prevent default action to avoid form submission or newline
-      const commentText = commentInputRef.current.value; // Get the current value of the comment input
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      const commentText = commentInputRef.current.value;
 
-      if (commentText.trim()) { // Check if the comment is not just whitespace
+      if (commentText.trim()) {
         try {
-          // Replace 'Alice' with the actual user or obtain it from context/auth
-          const payload = { text: commentText, user: "Alice" };
-          const response = await axios.post(`/api/comments/${post._id}/comments`, payload);
-
-          // Clear the input field on successful comment submission
+          const payload = { text: commentText, user: "Alice" };  
+          await axios.post(`/api/comments/${post._id}/comments`, payload);
           commentInputRef.current.value = "";
 
-          console.log("Comment added:", response.data);
-          // Optionally refresh comments list here
+          // Refresh comments list
+          const updatedComments = await axios.get(`/api/posts/${post._id}/comments`);
+          setComments(updatedComments.data);
         } catch (error) {
           console.error("Error adding comment:", error);
         }
@@ -33,17 +33,14 @@ const Post = ({ post }) => {
     }
   }
 
-  function handleClick(){    
+  function handleClick() {
     try {
-      console.log(post.likes)
-      setLike(like + 1)
-      console.log(post._id)
-      const response = axios.post(`/api/posts/${post._id}/like`)
-      console.log(post)
-  } catch (error) {
-      console.log(error)
+      setLike((prevLike) => prevLike + 1);
+      axios.post(`/api/posts/${post._id}/like`);
+    } catch (error) {
+      console.error(error);
+    }
   }
-}
 
   
   return (
@@ -52,7 +49,7 @@ const Post = ({ post }) => {
       <div className="bg-gray-100 p-4">
           <div className="flex items-center">
             <img
-              src="./images/stock/cat_caviar.jpg"
+              src="./images/stock/anotherpersonprofile.png"
               alt=""
               className="w-10 bg-white h-10 ml-4 rounded-full"
             />
@@ -83,34 +80,31 @@ const Post = ({ post }) => {
       </div>
       <div className="bg-slate-200">
         <div className="flex items-center p-4">
-          <img src="./images/stock/profilepic.jpg" alt="" className="w-10 bg-white h-10 rounded-full" />
+          <img src="./images/stock/personprofile.png" alt="" className="w-10 bg-white h-10 rounded-full" />
           <input
-            ref={commentInputRef} // Attach the ref to the input element
+            ref={commentInputRef}
             className="bg-slate-200 border-b-[1px] border-black w-full ml-4"
             placeholder="Comment..."
-            onKeyDown={handleSubmit} // Use the handleSubmit function for onKeyDown
+            onKeyDown={handleSubmit}
           />
         </div>
-        <div className="flex">
-          {post.comments &&
-            post.comments.map((comment, index) => (
-              <div className="w-full flex items-center" key={index}>
-                <img
-                  src="./images/stock/profilepic.jpg"
-                  alt=""
-                  className="w-10 bg-white h-10 ml-4 rounded-full"
-                />
-                <div className="flex flex-col m-4 bg-white w-full rounded-sm">
-                  <div className="p-2">
-                    <p className="text-purple-600">{comment.name}</p>
-                    <p className="py-1">{comment.text}</p>
-                    {/* The Id that is being rendered is the id of the comments. I will need to use this id to grab the comment from the database */}
-                    {/* I think I have to map all of the comments from the comments array. */}
-                    <p className="text-sm text-gray-300">{comment.timestamp}</p>
-                  </div>
+        <div className="flex flex-col space-y-2">
+          {comments.map((comment, index) => (
+            <div className="w-full flex items-center" key={index}>
+              <img
+                src="./images/stock/personprofile.png"
+                alt=""
+                className="w-10 bg-white h-10 ml-4 rounded-full"
+              />
+              <div className="flex flex-col m-4 bg-white w-full rounded-sm">
+                <div className="p-2">
+                  <p className="text-purple-600">{comment.user}</p> {/* Assuming 'user' field holds the commenter's name */}
+                  <p className="py-1">{comment.text}</p>
+                  <p className="text-sm text-gray-300">{comment.timestamp}</p>
                 </div>
               </div>
-            ))}
+            </div>
+          ))}
         </div>
       </div>
     </div>

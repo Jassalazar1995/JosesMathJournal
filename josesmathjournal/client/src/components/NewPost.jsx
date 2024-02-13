@@ -36,7 +36,7 @@ const NewPost = ({username, setPost, post}) => {
             <form onSubmit={handleSubmit}>
             <div className="bg-green-200 p-4 rounded-lg">
                 <div className="flex items-center">
-                    <img src="./images/stock/profilepic.jpg" alt="" className="w-10 bg-white h-10 ml-4 rounded-full"/>
+                    <img src="./images/stock/personprofile.png" alt="" className="w-10 bg-white h-10 ml-4 rounded-full"/>
                     <p className="pl-4">{username}</p>
                 </div>
             </div>

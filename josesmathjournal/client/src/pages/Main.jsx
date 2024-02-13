@@ -16,7 +16,6 @@ const subjects = [
   { name: 'Functional Analysis', icon: '/images/mainPage/functionalAnalysisLogo.png' },
   { name: 'Differential Geometry', icon: '/images/mainPage/diffGeoLogo.png' },
   { name: 'Topological Vector Spaces', icon: '/images/mainPage/topologicalVectorSpaceLogo.png' },
-  { name: 'Geometry', icon: '/images/mainPage/geometryLogo.png' },
   // ... other subjects
 ];
 
@@ -31,10 +30,10 @@ const main = () => {
 
       <section className="my-10">
         <h2 className="text-3xl font-bold text-center mb-6">Directory of Subjects</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
           {subjects.map((subject) => (
             <div key={subject.name} className="bg-white shadow-md rounded p-4 text-center">
-              <img src={subject.icon} alt={subject.name} className="mx-auto mb-3" />
+              <img src={subject.icon} alt={subject.name} className="mx-auto mb-1" />
               <h3 className="font-bold">{subject.name}</h3>
             </div>
           ))}
