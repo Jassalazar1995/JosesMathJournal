@@ -2,7 +2,7 @@
 import { Icon } from "@iconify/react"
 import axios from "axios";
 import { useState } from "react";
-
+import baseURL from "../Api";
 const NewPost = ({username, setPost, post}) => {
     let [input, setInput] = useState("");
 
@@ -18,7 +18,7 @@ const NewPost = ({username, setPost, post}) => {
                 user: username
             }
             console.log(postData)
-            const response = await axios.post('/api/posts', postData)
+            const response = await axios.post(`${baseURL}/api/posts`, postData)
             console.log(response.data)
             setPost([...post, response.data])
             setInput('')

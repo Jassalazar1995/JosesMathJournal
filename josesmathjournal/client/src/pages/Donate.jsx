@@ -4,13 +4,13 @@ import axios from "axios"; // Import axios
 import { Elements } from "@stripe/react-stripe-js";
 import CheckoutForm from "./CheckoutForm";
 import { loadStripe } from "@stripe/stripe-js";
-
+import baseURL from "../Api";
 export default function Donate() {
   const [stripePromise, setStripePromise] = useState(null);
   const [clientSecret, setClientSecret] = useState("");
 
   useEffect(() => {
-    axios.get("http://localhost:5000/config")
+    axios.get(`${baseURL}/config`)
       .then(response => {
         // Make sure that publishableKey is a string and not undefined
         if (typeof response.data.publishableKey === 'string') {
@@ -29,7 +29,7 @@ export default function Donate() {
 
   useEffect(() => {
     // Use axios to post and create a payment intent
-    axios.post("http://localhost:5000/create-payment-intent", {})
+    axios.post(`${baseURL}/create-payment-intent`, {})
       .then(response => {
         const { clientSecret } = response.data;
         setClientSecret(clientSecret);

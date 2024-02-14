@@ -4,7 +4,7 @@ import FeedList from "./FeedList"
 import NewPost from "./NewPost"
 import Container from "./util/Container"
 import axios from "axios"
-
+import baseURL from "../Api"
 
 
 const Feed = ({username}) => {
@@ -15,7 +15,7 @@ const Feed = ({username}) => {
 
         const getData = async () => {
           try {
-            const response = await axios.get('/api/posts')
+            const response = await axios.get(`${baseURL}/api/posts`)
             console.log(response)
             setPost(response.data)
           } catch(err) {

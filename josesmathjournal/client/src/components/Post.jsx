@@ -20,11 +20,11 @@ const Post = ({ post }) => {
       if (commentText.trim()) {
         try {
           const payload = { text: commentText, user: "Alice" };  
-          await axios.post(`/api/comments/${post._id}/comments`, payload);
+          await axios.post(`${baseURL}/api/comments/${post._id}/comments`, payload);
           commentInputRef.current.value = "";
 
           // Refresh comments list
-          const updatedComments = await axios.get(`/api/posts/${post._id}/comments`);
+          const updatedComments = await axios.get(`${baseURL}/api/posts/${post._id}/comments`);
           setComments(updatedComments.data);
         } catch (error) {
           console.error("Error adding comment:", error);
@@ -36,7 +36,7 @@ const Post = ({ post }) => {
   function handleClick() {
     try {
       setLike((prevLike) => prevLike + 1);
-      axios.post(`/api/posts/${post._id}/like`);
+      axios.post(`${baseURL}/api/posts/${post._id}/like`);
     } catch (error) {
       console.error(error);
     }

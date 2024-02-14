@@ -16,7 +16,6 @@ const subjects = [
   { name: 'Functional Analysis', icon: '/images/mainPage/functionalAnalysisLogo.png' },
   { name: 'Differential Geometry', icon: '/images/mainPage/diffGeoLogo.png' },
   { name: 'Topological Vector Spaces', icon: '/images/mainPage/topologicalVectorSpaceLogo.png' },
-  // ... other subjects
 ];
 
 const main = () => {
