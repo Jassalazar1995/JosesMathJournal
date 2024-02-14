@@ -1,6 +1,7 @@
 const cors = require("cors");
 const corsOptions = {
-  origin: 'https://josemathjournalfrontend.onrender.com', 
+  origin: 'https://josemathjournalfrontend.onrender.com',
+  credentials: true, 
   optionsSuccessStatus: 200,
 };
 
