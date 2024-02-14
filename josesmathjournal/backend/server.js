@@ -4,9 +4,10 @@ const corsOptions = {
   optionsSuccessStatus: 200,
 };
 
-app.use(cors(corsOptions));
+
 const express = require("express");
 const app = express();
+app.use(cors(corsOptions));
 const { resolve } = require("path");
 require("dotenv").config();
 const mongoConfig = require("./src/utils/db");
