@@ -18,12 +18,12 @@ function Login({ setUser }) {
     const handleChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value })
     }
-    console.log('baseURL:' + baseURL)
+
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            console.log('after:' + baseURL)
-            const response = await axios.post(`https://josemathjournal.onrender.com/api/auth/login`, form)
+            console.log('baseURL:' + baseURL)
+            const response = await axios.post(`${baseURL}/api/auth/login`, form)
             const token = response.data.token
             console.log('response')
             console.log(token)
@@ -35,7 +35,7 @@ function Login({ setUser }) {
 
             localStorage.setItem("token", token)
 
-            const userResponse = await axios.get(`https://josemathjournal.onrender.com/api/users/profile`, { 
+            const userResponse = await axios.get(`${baseURL}/api/users/profile`, { 
                 headers: {
                     Authorization: token
                 }
