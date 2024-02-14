@@ -18,11 +18,11 @@ function Login({ setUser }) {
     const handleChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value })
     }
-
+    console.log('baseURL:' + baseURL)
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            console.log(baseURL)
+            console.log('after:' + baseURL)
             const response = await axios.post(`https://josemathjournal.onrender.com/api/auth/login`, form)
             const token = response.data.token
             console.log('response')
