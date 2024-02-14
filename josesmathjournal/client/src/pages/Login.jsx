@@ -22,7 +22,7 @@ function Login({ setUser }) {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-
+            console.log(baseURL)
             const response = await axios.post(`https://josemathjournal.onrender.com/api/auth/login`, form)
             const token = response.data.token
             console.log('response')
