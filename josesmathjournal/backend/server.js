@@ -4,9 +4,14 @@ const app = express();
 const { resolve } = require("path");
 require("dotenv").config();
 const mongoConfig = require("./src/utils/db");
-app.use(cors());
-app.use(express.json());
 
+app.use(express.json());
+const corsOptions = {
+  origin: 'https://josemathjournalfrontend.onrender.com', 
+  optionsSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
 const env = require("dotenv").config({ path: "./.env" });
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY, {
   apiVersion: "2022-08-01",
