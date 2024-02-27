@@ -20,28 +20,22 @@ const subjects = [
 
 const main = () => {
   return (
-    <div className="container mx-auto px-4 m-40">
-      <header className="text-center my-10">
-        <h1 className="text-4xl font-bold">The Math Journal</h1>
-        <p className="text-md mt-3">Mathematics is not about numbers, equations, or computations; it’s about understanding. It's a journey of discovery where every challenge overcome is a victory.</p>
-        <p>Welcome to the Math Journal! Here you are able to learn math to your hearts content.</p>
-      </header>
-
-      <section className="my-10">
-        <h2 className="text-3xl font-bold text-center mb-6">Directory of Subjects</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
-          {subjects.map((subject) => (
-            <div key={subject.name} className="bg-white shadow-md rounded p-4 text-center">
-              <img src={subject.icon} alt={subject.name} className="mx-auto mb-1" />
-              <h3 className="font-bold">{subject.name}</h3>
+    <div className="h-screen w-full bg-gradient-to-b from-black via-black to-gray-800">
+      <div className="max-w-screen-lg mx-auto flex flex-col items-center justify-center h-full px-4 text-center">
+        <h1 className="text-4xl sm:text-7xl font-bold text-white">The Math Journal</h1>
+        <p className="text-gray-500 py-4 max-w-md">
+          Mathematics is not about numbers, equations, or computations; it’s about understanding. Dive into a world of mathematical exploration.
+        </p>
+        <div className="flex flex-wrap justify-center gap-4 mt-4">
+          {subjects.slice(0, 5).map((subject, index) => ( // Show a limited number of subjects to avoid scrolling
+            <div key={index} className="bg-white shadow-md rounded p-4">
+              <Icon icon={subject.icon} className="text-3xl" />
+              <h3 className="font-bold mt-2">{subject.name}</h3>
             </div>
           ))}
         </div>
-      </section>
-
-      <footer className="my-10">
-        <input type="text" placeholder="Search The Journal" className="shadow border rounded py-2 px-3 text-gray-700 w-full" />
-      </footer>
+        <p className="text-gray-400 mt-4">Explore more subjects in our directory...</p>
+      </div>
     </div>
   );
 };
